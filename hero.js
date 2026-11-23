@@ -14,11 +14,11 @@
 
   /* face centre (fx, fy) and head width (ff) as fractions of each 4:5 print */
   var FACES = {
-    p1952: { src: "assets/p1952.jpg", fx: 0.38, fy: 0.31, ff: 0.2 },
-    p1975: { src: "assets/p1975.jpg", fx: 0.30, fy: 0.29, ff: 0.2 },
-    p1994: { src: "assets/p1994.jpg", fx: 0.40, fy: 0.33, ff: 0.26 },
-    p2008: { src: "assets/p2008.jpg", fx: 0.66, fy: 0.28, ff: 0.2 },
-    p2025: { src: "assets/p2025.jpg", fx: 0.70, fy: 0.31, ff: 0.3 }
+    p1952: { src: "assets/p1952.jpg", fx: 0.387, fy: 0.279, ff: 0.26 },
+    p1975: { src: "assets/p1975.jpg", fx: 0.298, fy: 0.228, ff: 0.29 },
+    p1994: { src: "assets/p1994.jpg", fx: 0.41, fy: 0.327, ff: 0.3 },
+    p2008: { src: "assets/p2008.jpg", fx: 0.604, fy: 0.289, ff: 0.22 },
+    p2025: { src: "assets/p2025.jpg", fx: 0.601, fy: 0.228, ff: 0.28 }
   };
   var ASPECT = 1.3, LOOP = 18;
   /* stack position (sx, sy, sr) and tree position (tx, ty) as fractions of stage width and height */
