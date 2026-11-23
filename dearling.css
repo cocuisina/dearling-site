@@ -93,6 +93,18 @@ label { font-weight: 600; font-size: 20px; }
 .tag { position: absolute; left: 0; top: 0; background: #fff; color: var(--ink); font-weight: 700; font-size: 18px; line-height: 1; padding: 9px 12px; border-radius: 10px; white-space: nowrap; box-shadow: 0 6px 18px rgb(0 0 0 / .28); }
 .stagebar { display: flex; align-items: center; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
 .stagecap { font-weight: 600; font-size: 18px; background: rgb(8 34 30 / .8); padding: 12px 16px; border-radius: 12px; }
+/* wide screens: the tree sits in a solid card on the lower right, below every face in the photograph; the photo keeps its height and the night ground extends under it */
+@media (min-width: 901px) {
+  .hero { min-height: calc(min(100svh, 800px) + 360px); }
+  .hero .bg, .hero .scrim { bottom: auto; height: min(100svh, 800px); }
+  .hero .bg { overflow: hidden; }
+  .hero .scrim {
+    background:
+      linear-gradient(0deg, var(--night) 0%, rgb(8 34 30 / 0) 110px),
+      radial-gradient(ellipse 60% 90% at 0% 58%, rgb(8 34 30 / .92) 0%, rgb(8 34 30 / .88) 58%, rgb(8 34 30 / 0) 100%),
+      linear-gradient(180deg, rgb(8 34 30 / .78) 0%, rgb(8 34 30 / .5) 70px, rgb(8 34 30 / 0) 150px); }
+  .stagewrap { position: absolute; z-index: 3; right: var(--gutter); top: calc(min(100svh, 800px) - 330px); width: clamp(380px, 38vw, 400px); padding: 20px; background: var(--night); border: 2px solid rgb(255 255 255 / .22); border-radius: 24px; box-shadow: 0 24px 60px -20px rgb(0 0 0 / .6); }
+}
 
 /* ---------- landing body: varied composition ---------- */
 .sec { padding: clamp(72px, 9vw, 128px) var(--gutter); }
