@@ -23,11 +23,11 @@
   var ASPECT = 1.3, LOOP = 18;
   /* stack position (sx, sy, sr) and tree position (tx, ty) as fractions of stage width and height */
   var people = [
-    { k: "p1952", name: "Arthur", yr: "1952", sx: 0.33, sy: 0.3, sr: -8, tx: 0.3, ty: 0.09, fl: 0.0 },
-    { k: "p1975", name: "Daniel", yr: "1975", sx: 0.64, sy: 0.27, sr: 6, tx: 0.3, ty: 0.335, fl: 1.3 },
-    { k: "p1994", name: "Marta", yr: "1994", sx: 0.37, sy: 0.6, sr: -3, tx: 0.66, ty: 0.335, fl: 2.4 },
-    { k: "p2008", name: "Rosa", yr: "2008", sx: 0.67, sy: 0.62, sr: 7, tx: 0.48, ty: 0.58, fl: 3.2 },
-    { k: "p2025", name: "Mira", yr: "2025", sx: 0.5, sy: 0.47, sr: 2, tx: 0.48, ty: 0.825, fl: 4.1 }
+    { k: "p1952", name: "Arthur", yr: "1952", sx: 0.33, sy: 0.3, sr: -8, tx: 0.3, row: 0, fl: 0.0 },
+    { k: "p1975", name: "Daniel", yr: "1975", sx: 0.64, sy: 0.27, sr: 6, tx: 0.3, row: 1, fl: 1.3 },
+    { k: "p1994", name: "Marta", yr: "1994", sx: 0.37, sy: 0.6, sr: -3, tx: 0.66, row: 1, fl: 2.4 },
+    { k: "p2008", name: "Rosa", yr: "2008", sx: 0.67, sy: 0.62, sr: 7, tx: 0.48, row: 2, fl: 3.2 },
+    { k: "p2025", name: "Mira", yr: "2025", sx: 0.5, sy: 0.47, sr: 2, tx: 0.48, row: 3, fl: 4.1 }
   ];
   var svgNS = "http://www.w3.org/2000/svg";
   var svg = document.createElementNS(svgNS, "svg");
@@ -71,11 +71,17 @@
   function render(t) {
     var T = t % LOOP;
     var P = reduce ? 1 : phase(T);
-    var S = stage.clientWidth, asp = S < 420 && window.innerWidth < 700 ? 1.55 : ASPECT;
-    stage.style.aspectRatio = "1 / " + asp;
-    var H = S * asp;
+    var S = stage.clientWidth;
     if (!S) return;
-    var sw = S * 0.46, sh = sw * 1.25, d = S * (S < 400 ? 0.21 : 0.2), pad = 8;
+    var d = S * (S < 400 ? 0.21 : 0.2), tagH = people[0].tag.offsetHeight || 36;
+    /* tree rows are one portrait, 10px, one label and 10px apart, so no label touches a portrait */
+    var pitch = d + 20 + tagH, top0 = 4;
+    var need = top0 + 3 * pitch + d + 10 + tagH + 4;
+    var asp = S < 420 && window.innerWidth < 700 ? 1.55 : ASPECT;
+    var H = Math.max(S * asp, need);
+    stage.style.aspectRatio = "1 / " + (H / S);
+    function treeY(p) { return top0 + d / 2 + p.row * pitch; }
+    var sw = S * 0.46, sh = sw * 1.25, pad = 8;
     people.forEach(function (p, i) {
       var f = FACES[p.k];
       var fl = reduce ? 0 : 1 - P;
@@ -83,7 +89,7 @@
       var fy = Math.cos(t * 0.29 + p.fl * 1.7) * S * 0.012 * fl;
       var fr = Math.sin(t * 0.22 + p.fl) * 1.4 * fl;
       var cx = lerp(p.sx * S, p.tx * S, P) + fx;
-      var cy = lerp(p.sy * H, p.ty * H, P) + fy;
+      var cy = lerp(p.sy * H, treeY(p), P) + fy;
       var rot = lerp(p.sr, 0, P) + fr;
       var w = lerp(sw, d, P), h = lerp(sh, d, P);
       var el = p.el, bw = lerp(pad, 4, P);
@@ -100,16 +106,16 @@
       p.ring.style.opacity = T < 16 ? rIn : 0;
       p.ring.style.left = f.fx * 100 + "%"; p.ring.style.top = f.fy * 100 + "%";
       p.ring.style.width = p.ring.style.height = f.ff * picw + "px";
-      p.tag.style.transform = "translate(" + (cx - p.tag.offsetWidth / 2) + "px," + (cy + h / 2 + 8) + "px)";
+      p.tag.style.transform = "translate(" + (cx - p.tag.offsetWidth / 2) + "px," + (cy + h / 2 + 10) + "px)";
       p.tag.style.opacity = sstep(0.6, 0.9, P);
     });
-    function C(i) { return [people[i].tx * S, people[i].ty * H]; }
+    function C(i) { return [people[i].tx * S, treeY(people[i])]; }
     var r = d / 2, a = C(0), dn = C(1), ma = C(2), ro = C(3), mi = C(4), mid = (dn[0] + ma[0]) / 2;
-    var defs = [
-      "M" + a[0] + " " + (a[1] + r + 48) + " V" + (dn[1] - r - 6),
-      "M" + (dn[0] + r + 4) + " " + dn[1] + " H" + (ma[0] - r - 4),
-      "M" + mid + " " + dn[1] + " V" + (ro[1] - r - 6),
-      "M" + ro[0] + " " + (ro[1] + r + 48) + " V" + (mi[1] - r - 6)
+    var defs = [ /* each line runs portrait edge to portrait edge, tucked 2px under the white rings */
+      "M" + a[0] + " " + (a[1] + r - 2) + " V" + (dn[1] - r + 2),
+      "M" + (dn[0] + r - 2) + " " + dn[1] + " H" + (ma[0] - r + 2),
+      "M" + mid + " " + dn[1] + " V" + (ro[1] - r + 2),
+      "M" + ro[0] + " " + (ro[1] + r - 2) + " V" + (mi[1] - r + 2)
     ];
     var o = 1 - sstep(0.55, 1, P);
     paths.forEach(function (pa, i) {

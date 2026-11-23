@@ -93,17 +93,19 @@ label { font-weight: 600; font-size: 20px; }
 .tag { position: absolute; left: 0; top: 0; background: #fff; color: var(--ink); font-weight: 700; font-size: 18px; line-height: 1; padding: 9px 12px; border-radius: 10px; white-space: nowrap; box-shadow: 0 6px 18px rgb(0 0 0 / .28); }
 .stagebar { display: flex; align-items: center; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
 .stagecap { font-weight: 600; font-size: 18px; background: rgb(8 34 30 / .8); padding: 12px 16px; border-radius: 12px; }
-/* wide screens: the tree sits in a solid card on the lower right, below every face in the photograph; the photo keeps its height and the night ground extends under it */
+/* wide screens: the tree sits in a solid card whose top is below every face in the photograph, over the table; the photo keeps its own height, the night ground carries the card, and the pause control sits at the lower left */
 @media (min-width: 901px) {
-  .hero { min-height: calc(min(100svh, 800px) + 360px); }
-  .hero .bg, .hero .scrim { bottom: auto; height: min(100svh, 800px); }
+  .hero { --ph: clamp(560px, 46vw, 720px); --cw: clamp(380px, 38vw, 400px); }
+  .hero .bg, .hero .scrim { bottom: auto; height: var(--ph); }
   .hero .bg { overflow: hidden; }
   .hero .scrim {
     background:
       linear-gradient(0deg, var(--night) 0%, rgb(8 34 30 / 0) 110px),
       radial-gradient(ellipse 60% 90% at 0% 58%, rgb(8 34 30 / .92) 0%, rgb(8 34 30 / .88) 58%, rgb(8 34 30 / 0) 100%),
-      linear-gradient(180deg, rgb(8 34 30 / .78) 0%, rgb(8 34 30 / .5) 70px, rgb(8 34 30 / 0) 150px); }
-  .stagewrap { position: absolute; z-index: 3; right: var(--gutter); top: calc(min(100svh, 800px) - 330px); width: clamp(380px, 38vw, 400px); padding: 20px; background: var(--night); border: 2px solid rgb(255 255 255 / .22); border-radius: 24px; box-shadow: 0 24px 60px -20px rgb(0 0 0 / .6); }
+      linear-gradient(180deg, rgb(8 34 30 / .9) 0%, rgb(8 34 30 / .68) 80px, rgb(8 34 30 / 0) 180px); }
+  .hero-inner { min-height: 0; }
+  .stagewrap { position: relative; z-index: 3; align-self: start; justify-self: end; margin: calc(var(--ph) - 316px) calc(var(--gutter) * .5) 0 0; width: var(--cw); padding: 20px; background: var(--night); border: 2px solid rgb(255 255 255 / .22); border-radius: 24px; box-shadow: 0 24px 60px -20px rgb(0 0 0 / .6); }
+  .stagebar { position: absolute; bottom: 0; left: calc(2 * var(--gutter) + var(--cw) - 100vw); right: calc(100% + 40px); margin: 0; }
 }
 
 /* ---------- landing body: varied composition ---------- */
@@ -307,6 +309,7 @@ body.signin { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; 
   .hero-inner { grid-template-columns: 1fr; padding-top: 250px; padding-bottom: 48px; min-height: 0; gap: 40px; }
   .stagewrap { justify-self: center; width: min(420px, 100%); }
   .intro, .quiet, .coll { grid-template-columns: 1fr; }
+  .coll .float { position: relative !important; margin: -30px 12px 0 !important; right: auto !important; left: auto !important; bottom: auto !important; max-width: none !important; }
   .coll .colB { margin-top: 40px; }
   .colA .fig { width: 100%; margin-top: 28px; }
   .colB .fig { margin-left: 0; width: 100%; margin-bottom: 28px; }
@@ -345,7 +348,6 @@ body.signin { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; 
   .hero .cta .btn { width: 100%; }
   .hero .cta .link { margin: 0 auto; }
   .float { font-size: 19px; }
-  .coll .float { position: relative !important; margin: -30px 12px 0 !important; right: auto !important; left: auto !important; bottom: auto !important; max-width: none !important; }
   .colB .fig .frame { transform: none; }
   .fan .pr { aspect-ratio: 16/10 !important; }
   .fan { height: auto; margin-top: 36px; display: grid; gap: 20px; }
