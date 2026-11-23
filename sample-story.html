@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dearling, The harbour on Sundays</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 38 38%27%3E%3Ccircle cx=%2719%27 cy=%279%27 r=%276%27 fill=%27%230f6b5c%27/%3E%3Ccircle cx=%278%27 cy=%2728%27 r=%276%27 fill=%27%230f6b5c%27/%3E%3Ccircle cx=%2730%27 cy=%2728%27 r=%276%27 fill=%27%238fe0cc%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="dearling.css">
+</head>
+<body class="app">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Dearling home"><svg viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="9" r="6" fill="currentColor"/><circle cx="8" cy="28" r="6" fill="currentColor"/><circle cx="30" cy="28" r="6" fill="#8fe0cc"/><path d="M19 15 C19 22 8 20 8 22 M19 15 C19 22 30 20 30 22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Dearling</a>
+  </div>
+</header>
+<main class="wrap rw">
+  <p class="sample-line"><b>This is a sample.</b> The family, the photographs and the story are all made up. Dearling is pre-launch.</p>
+  <a class="back" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Back to the home page</a>
+  <div class="rw-grid">
+    <div>
+      <h1>The harbour on Sundays</h1>
+      <div class="by"><img src="assets/faces/arthur-old.jpg" alt="" width="112" height="112"><span>Told by <b>Arthur</b>, recorded in March</span></div>
+      <div class="player" id="player">
+        <div class="shot">
+          <div class="slide on" data-year="1952"><img src="assets/p1952.jpg" alt="Arthur and Ines in 1952, outside a brick house" style="object-position:50% 30%"></div>
+          <div class="slide" data-year="1975"><img src="assets/p1975.jpg" alt="Daniel with baby Rosa and Marta on a porch step, 1975" style="object-position:50% 30%"></div>
+          <div class="slide" data-year="1994"><img src="assets/p1994.jpg" alt="A birthday cake in the kitchen, 1994" style="object-position:50% 40%"></div>
+          <div class="slide" data-year="2008"><img src="assets/p2008.jpg" alt="Arthur, Rosa and the children at the shore, 2008" style="object-position:50% 35%"></div>
+          <div class="slide" data-year="2025"><img src="assets/p2025.jpg" alt="Marta and Mira rolling out dough, 2025" style="object-position:50% 35%"></div>
+          <span class="yr" id="yr">1952</span>
+          <p class="sub-line" id="sub">We had nothing, but every Sunday Ines and I took the ferry across to the harbour.</p>
+        </div>
+        <div class="ctrl">
+          <div class="prog"><span id="now">0:08</span><div class="track" id="track" role="slider" tabindex="0" aria-label="Position in the story" aria-valuemin="0" aria-valuemax="112" aria-valuenow="8"><div class="bars2" id="bars" aria-hidden="true"><i style="--h:18%"></i><i style="--h:29%"></i><i style="--h:29%"></i><i style="--h:33%"></i><i style="--h:42%"></i><i style="--h:84%"></i><i style="--h:72%"></i><i style="--h:19%"></i><i style="--h:56%"></i><i style="--h:43%"></i><i style="--h:18%"></i><i style="--h:29%"></i><i style="--h:64%"></i><i style="--h:65%"></i><i style="--h:20%"></i><i style="--h:72%"></i><i style="--h:72%"></i><i style="--h:33%"></i><i style="--h:24%"></i><i style="--h:30%"></i><i style="--h:45%"></i><i style="--h:21%"></i><i style="--h:73%"></i><i style="--h:85%"></i><i style="--h:42%"></i><i style="--h:41%"></i><i style="--h:43%"></i><i style="--h:18%"></i><i style="--h:20%"></i><i style="--h:57%"></i><i style="--h:78%"></i><i style="--h:43%"></i><i style="--h:52%"></i><i style="--h:73%"></i><i style="--h:45%"></i><i style="--h:19%"></i><i style="--h:29%"></i><i style="--h:53%"></i><i style="--h:38%"></i><i style="--h:53%"></i></div></div><span>1:52</span></div>
+          <div class="btnrow">
+            <button class="skip" type="button" id="back15" aria-label="Back 15 seconds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 108-8H8M8 1l-4 3 4 3"/></svg>15</button>
+            <button class="big-play" type="button" id="play" aria-label="Pause story"></button>
+            <button class="skip" type="button" id="fwd15" aria-label="Forward 15 seconds">15<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 11-8-8h4M16 1l4 3-4 3"/></svg></button>
+            <button class="skip" type="button" id="speed">Speed 1x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="side">
+      <section class="panel" aria-labelledby="who">
+        <h2 id="who">Who is in this story</h2>
+        <div class="faces-row">
+          <div class="fp lit" data-f="arthur"><img src="assets/faces/arthur.jpg" alt="">Arthur</div>
+          <div class="fp lit" data-f="ines"><img src="assets/faces/ines.jpg" alt="">Ines</div>
+          <div class="fp" data-f="daniel"><img src="assets/faces/daniel.jpg" alt="">Daniel</div>
+          <div class="fp" data-f="marta"><img src="assets/faces/marta.jpg" alt="">Marta</div>
+          <div class="fp" data-f="rosa"><img src="assets/faces/rosa.jpg" alt="">Rosa</div>
+          <div class="fp" data-f="theo"><img src="assets/faces/theo.jpg" alt="">Theo</div>
+          <div class="fp" data-f="mira"><img src="assets/faces/mira.jpg" alt="">Mira</div>
+        </div>
+        <div class="strip" id="strip" aria-label="Photographs in this story">
+          <button type="button" aria-label="Photograph from 1952" aria-current="true"><img src="assets/p1952.jpg" alt=""></button>
+          <button type="button" aria-label="Photograph from 1975" aria-current="false"><img src="assets/p1975.jpg" alt=""></button>
+          <button type="button" aria-label="Photograph from 1994" aria-current="false"><img src="assets/p1994.jpg" alt=""></button>
+          <button type="button" aria-label="Photograph from 2008" aria-current="false"><img src="assets/p2008.jpg" alt=""></button>
+          <button type="button" aria-label="Photograph from 2025" aria-current="false"><img src="assets/p2025.jpg" alt=""></button>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="trh">
+        <h2 id="trh">What he said</h2>
+        <div class="tr" id="tr">
+          <button type="button" class="now">We had nothing, but every Sunday Ines and I took the ferry across to the harbour.</button>
+          <button type="button">By the time Daniel had a daughter, he was the one carrying the basket up Mill Street.</button>
+          <button type="button">Marta's birthday cakes always had too many candles, and Ines counted them every time.</button>
+          <button type="button">Now Rosa brings her children down to the water, and I tell it the same way.</button>
+          <button type="button">Marta still makes the dough on Sundays, with Mira beside her.</button>
+        </div>
+      </section>
+    </aside>
+  </div>
+  <p class="note-line">Preview with made-up people and AI-made photographs. Dearling is pre-launch. <a class="link" href="/">Back to the Dearling home page</a></p>
+</main>
+<script src="rewatch.js"></script>
+</body>
+</html>

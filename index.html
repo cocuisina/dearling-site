@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dearling: every photo has a story</title>
+<meta name="description" content="Dearling turns old family photographs and the stories behind them into a family tree your relatives can watch and hear.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 38 38%27%3E%3Ccircle cx=%2719%27 cy=%279%27 r=%276%27 fill=%27%230f6b5c%27/%3E%3Ccircle cx=%278%27 cy=%2728%27 r=%276%27 fill=%27%230f6b5c%27/%3E%3Ccircle cx=%2730%27 cy=%2728%27 r=%276%27 fill=%27%238fe0cc%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="dearling.css">
+</head>
+<body>
+
+<header class="hero onphoto" id="hero">
+  <div class="bg"><img src="assets/hero-dinner.jpg" alt="" width="2016" height="864"></div>
+  <div class="scrim"></div>
+  <nav class="bar" aria-label="Main">
+    <a class="brand" href="/"><svg viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="9" r="6" fill="currentColor"/><circle cx="8" cy="28" r="6" fill="currentColor"/><circle cx="30" cy="28" r="6" fill="#8fe0cc"/><path d="M19 15 C19 22 8 20 8 22 M19 15 C19 22 30 20 30 22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Dearling</a>
+    <a class="navlink hide-sm" href="#how">How it works</a>
+    <a class="navlink hide-sm" href="#private">Privacy</a>
+  </nav>
+  <div class="hero-inner">
+    <div>
+      <h1>Every photo has a story.</h1>
+      <p class="sub">Talk, and Dearling builds your family tree as you go. Add your photographs, tell the story out loud, and your family can watch it back with your voice.</p>
+      <div class="cta">
+        <p class="opening">Opening soon. Dearling is pre-launch.</p>
+        <a class="link" href="sample-story.html">Watch a sample story</a>
+      </div>
+      <p class="note">Dearling is pre-launch. The family in these photographs is made up.</p>
+    </div>
+    <div class="stagewrap">
+      <div class="stage" id="stage" role="group" aria-label="Five family photographs, from 1952 to 2025, become a family tree: Arthur, Daniel, Marta, Rosa and Mira"></div>
+      <div class="stagebar">
+        <button class="btn btn-ghost" id="pausebtn" type="button" aria-pressed="false">Pause the animation</button>
+        <span class="stagecap" id="stagecap">Photographs become people on your tree</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="sec" id="how">
+  <div class="intro">
+    <h2 class="h2">How a story gets kept</h2>
+    <p class="lead">Four steps, in the order a family actually does them. You can stop after any one of them.</p>
+  </div>
+
+  <div class="coll">
+    <div class="colA">
+      <h3>You talk. The tree listens.</h3>
+      <p class="t">A voice asks about your family, one question at a time. Say a name and it appears on the tree. Stop whenever you like and pick it up tomorrow.</p>
+      <div class="fig">
+        <div class="frame" style="aspect-ratio:3/3.6"><img src="assets/grandpa.jpg" alt="Arthur, an older man with white hair, a white moustache and glasses, laughing as he tells a story" style="object-position:50% 20%"></div>
+        <div class="float" style="right:-10%;bottom:-10%;max-width:330px">
+          <div class="who">Dearling asks</div>
+          <b>Who was your father's father?</b>
+          <div class="bars" style="margin-top:12px" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="colB">
+      <div class="fig">
+        <div class="frame" style="aspect-ratio:4/5"><img src="assets/p1975.jpg" alt="A faded 1975 snapshot: Daniel holding his small daughter Rosa on a porch step, beside Marta and her mother"></div>
+        <span class="ringed" style="left:33%;top:29%;width:12%;aspect-ratio:1"></span>
+        <div class="float" style="left:-12%;bottom:-9%;max-width:340px">
+          <b>Is this Daniel?</b>
+          <div class="who" style="margin-bottom:14px">Only if you turn face matching on</div>
+          <div style="display:flex;gap:12px"><a class="btn btn-primary" href="sample-story.html">Yes</a><a class="btn btn-quiet" href="sample-story.html">Not him</a></div>
+        </div>
+      </div>
+      <h3 style="margin-top:56px">Add photographs and name the faces.</h3>
+      <p class="t">Bring old prints and new phone photos. If you choose, Dearling suggests who is in them and you say yes or no. Face matching stays off until you switch it on.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bleed" aria-labelledby="h-tell">
+  <img src="assets/hero-porch.jpg" alt="The family around a porch table: Arthur tells a story with one hand raised while Marta, Rosa, Mira and Theo listen">
+  <div class="step">
+    <h3 id="h-tell">Tell the story out loud.</h3>
+    <p class="t">Pick a photograph and talk about it. Your voice is recorded and written out as text, so the story can be heard and read.</p>
+  </div>
+  <div class="float">
+    <div style="display:flex;align-items:center;gap:14px"><b>Recording</b><span class="who">1:42</span></div>
+    <div class="bars" style="margin-top:10px" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="who" style="margin-top:10px">We took the ferry every Sunday, Ines and I.</div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="centre">
+    <h3>Your family watches it back.</h3>
+    <p class="t">The story plays with its photographs, like a slideshow with your voice on top. Anyone you invite can watch, and nobody else can.</p>
+    <div class="fan">
+      <div class="pr l"><img src="assets/p1994.jpg" alt="A 1994 kitchen birthday: children blowing out candles, Daniel and Marta behind them"></div>
+      <div class="pr c"><img src="assets/p2008.jpg" alt="A 2008 seaside picnic: Arthur with his daughter Rosa and her two small children eating watermelon" style="object-position:50% 40%"></div>
+      <div class="pr r"><img src="assets/p2025.jpg" alt="Marta and her granddaughter Mira rolling out dough together, 2025"></div>
+      <div class="float">
+        <a class="btn btn-primary btn-icon" href="sample-story.html" aria-label="Play Arthur's story"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+        <div style="text-align:left"><b>The harbour on Sundays</b><div class="who">Told by Arthur, 2 minutes, 5 photographs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec stonebg" id="private">
+  <div class="quiet">
+    <div>
+      <h2 class="h2" style="margin-bottom:36px;font-size:clamp(34px,4vw,54px)">Kept inside the family</h2>
+      <ul class="facts">
+        <li>Only your family sees it.<span>Photographs and stories are private to the family that made them.</span></li>
+        <li>You invite people by email.<span>There is no public page and no search.</span></li>
+        <li>No passwords to remember.<span>You sign in with a link we send to your email.</span></li>
+      </ul>
+    </div>
+    <div class="pile" aria-hidden="true">
+      <div class="pr" style="width:50%;left:4%;top:4%;transform:rotate(-7deg)"><img src="assets/p1952.jpg" alt=""></div>
+      <div class="pr" style="width:46%;left:46%;top:2%;transform:rotate(5deg)"><img src="assets/p1975.jpg" alt=""></div>
+      <div class="pr" style="width:48%;left:10%;top:40%;transform:rotate(-3deg)"><img src="assets/p1994.jpg" alt=""></div>
+      <div class="pr" style="width:44%;left:50%;top:44%;transform:rotate(7deg)"><img src="assets/p2025.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="closer onphoto">
+  <img src="assets/living.jpg" alt="Arthur holds an old photograph and tells its story to his family on the sofa" style="object-position:70% 45%">
+  <div class="scrim"></div>
+  <div class="inner">
+    <h2>Start with one photograph.</h2>
+    <p>Dearling is new and pre-launch, so there are no reviews to show you yet. We would rather say that than make some up.</p>
+    <div class="cta"><p class="opening">Opening soon. Dearling is pre-launch.</p><a class="link" href="sample-story.html">Watch a sample story</a></div>
+  </div>
+</section>
+<footer class="foot">
+  <a class="brand" href="/"><svg viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="9" r="6" fill="currentColor"/><circle cx="8" cy="28" r="6" fill="currentColor"/><circle cx="30" cy="28" r="6" fill="#8fe0cc"/><path d="M19 15 C19 22 8 20 8 22 M19 15 C19 22 30 20 30 22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Dearling</a>
+  <a class="link" href="#private">Privacy</a>
+  <span>Every photograph on this page is AI-made, and the family is made up.</span>
+</footer>
+
+<script src="hero.js"></script>
+</body>
+</html>
